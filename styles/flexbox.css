@@ -1,0 +1,185 @@
+body{
+    background-color: grey;
+    font-family: sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    color: white;
+}
+
+h3{
+    color: darkorange;
+}
+
+a{
+    color: black;
+}
+
+.flexbox_img{
+    width: 80%;
+    display: block;
+    margin: 20px auto;
+    background-color: aliceblue;
+    border: medium solid black;
+}
+/* ------ Extension CSS Flexbox Cheatsheet: Ctrl + Shift + p > Open CSS Flexbox Cheatsheet ------ */
+/* ---------------------------------------------------------------------------------------------- */
+/*                                             Flexbox                                            */
+/* ---------------------------------------------------------------------------------------------- */
+/* 
+Flexbox es un modulo completo y no una simple propiedad, por lo tanto tiene un set de propiedades
+algunas para el padre o contenedor (flex container) y otras para los hijos o items (flex items),
+
+Es un sistema unidimensional, podemos tener filas o columnas pero no ambas a la vez 
+
+Existe un eje principal llamdo main axis y un eje transversal llamado cross axis,
+hay una propiedad que nos permite hacer cross axis como principal pero main es por default 
+*/
+
+/* ------------------------------------------- Display ------------------------------------------ */
+/* flex o inline-flex alinean a sus hijos en fila (row) por defecto */
+
+.container1{
+    background-color: aqua;
+    display: flex;
+}
+/* display: flex; es una caja flex de bloque  */
+
+.container2{
+    background-color: pink;
+    display: inline-flex;
+}
+/* display: inline-flex; es una caja flex de linea  */
+
+/* ------------------------ Flujo de Flexbox (flex-direction y flex-wrap) ----------------------- */
+.items{
+    border: 2px solid darkgrey;
+    padding: 5px;
+}
+
+/* Por defecto flex-directionn es row */
+
+.container3{
+    background-color: aqua;
+    display: inline-flex;
+    flex-direction: column;
+}
+/* Columna */
+
+.container4{
+    background-color: pink;
+    display: inline-flex;
+    flex-direction: row;
+}
+/* Fila  */
+
+.container5{
+    background-color: orange;
+    display: inline-flex;
+    flex-direction: column-reverse;
+}
+/* Columna Invertida */
+
+.container6{
+    background-color: yellow;
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+/* Fila invertida */
+
+/* Tener en cuenta que lo que pongamos en flex-direction se vuelve el eje principal */
+
+/* Por defecto flex-wrap es nowrap */
+
+.item2{
+    border: 2px solid darkgrey;
+    padding: 5px;
+    margin: 1px;
+    width: 25%;
+}
+
+.container7{
+    background-color: aqua;
+    display: flex;
+    flex-wrap: nowrap;
+}
+/* nowrap hara que todos los items entren en una sola linea, 
+por lo que si el ancho de todos sus items supera el de la ventana los "aplastara" hasta su ancho minimo,
+si su ancho minimo supera el de la pagina, crea srcoll horizontal */
+
+.container8{
+    background-color: pink;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* si el ancho de sus items supera el de la ventana, les permite saltar de linea hacia abajo */
+
+.container9{
+    background-color: orange;
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+/* si el ancho de sus items supera el de la ventana, les permite saltar de linea hacia arriba */
+
+.container10{
+    background-color: aqua;
+    height: 70px;
+    display: flex;
+    flex-flow: column-reverse wrap-reverse;
+}
+/* flex-flow es un shortcut para flex-direction y flex-wrap */
+
+/* ------------------------- Alineacion en el Main Axis (justify-content) ------------------------- */
+/* tener en cuenta que el main axis puede cambiar dependiendo el flex-direction, por defecto es row */
+.mainAxis{
+    display: flex;
+}
+.item3{
+    height: 100px;
+    width: 100px;
+    border: 2px dotted gray;
+}
+/* justify-content para la alineacion en el main axis */
+
+.container11{
+    background-color: aqua;
+    justify-content: flex-start; /* por default */
+}
+/* alineado al inicio */
+
+.container12{
+    background-color: pink;
+    justify-content: center;
+}
+/* alineado al centro */
+
+.container13{
+    background-color: orange;
+    justify-content: flex-end;
+}
+/* alineado al final  */
+
+.container14{
+    background-color: yellow;
+    justify-content: space-between;
+}
+/* genera espacios entre elementos */
+
+.container15{
+    background-color: lightgreen;
+    justify-content: space-around;
+}
+/* genera espacios alrededor de cada item por igual  */
+
+.container16{
+    background-color: lightsalmon;
+    justify-content: space-evenly;
+}
+/* 
+genera espacios alrededor como space-around con la diferencia que 
+los espacios entre elementos y  el espacio hasta los bordes, deben ser iguales
+*/
